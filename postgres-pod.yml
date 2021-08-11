@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: pod
+metadata:
+  name: postgres-pod
+  labels:
+    name: postgres-pod
+    authoor: mel
+spec:
+  containers:
+    - name: postgress
+      image: postgres
+      env:
+        - name: POSTGRES_PASSWORD
+          value: mel
+        - name: POSTGRES_USER
+          value: myuser
+        - name: POSTGRES_DB
+          value: db
+      ports:
+        - container: 5432
